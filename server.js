@@ -48,7 +48,8 @@ var db = mongojs(databaseUrl, collections);
 //CONFIGURE MONGOOSE
 var mongoose = require('mongoose');
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true});
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
 
 //SCRAPE WALL STREET JOURNAL WEBSITE
   axios.get("https://www.wsj.com/").then(function (response) {
