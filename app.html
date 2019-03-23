@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <h1>WALL STREET JOURNAL APP</h1>
+    <div id="articles"></div>
+
+    <script>
+        $.getJSON("/scrape", function (data) {
+            // SHOW THE HEADLINE, URL AND SUMMARY FOR EACH ARTICLE
+            for (var i = 0; i < data.length; i++) {
+                $("#articles").append("<p>" + "Headline: " + data[i].Headline + "<br />" + "Link: " + data[i].URL +
+                    "<br />" + "Summary: " + data[i].Summary + "</p>" + "<button>" + "Add Comment" + "</button>");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
