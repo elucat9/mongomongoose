@@ -41,9 +41,6 @@ var path = require('path');
 
 var port = process.env.PORT || 3000;
 //CONFIGURE DB AND MONGOJS
-var databaseUrl = "scraper";
-var collections = ["results", "comment"];
-var db = mongojs(databaseUrl, collections);
 
 //CONFIGURE MONGOOSE
 var mongoose = require('mongoose');
