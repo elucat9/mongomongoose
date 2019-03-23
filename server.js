@@ -47,8 +47,9 @@ var db = mongojs(databaseUrl, collections);
 
 //CONFIGURE MONGOOSE
 var mongoose = require('mongoose');
+console.log(process.env)
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 
 //SCRAPE WALL STREET JOURNAL WEBSITE
