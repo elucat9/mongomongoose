@@ -39,7 +39,7 @@ var app = express();
 var path = require('path');
 
 
-var post = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 //CONFIGURE DB AND MONGOJS
 var databaseUrl = "scraper";
 var collections = ["results", "comment"];
