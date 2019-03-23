@@ -38,6 +38,8 @@ var axios = require("axios");
 var app = express();
 var path = require('path');
 
+
+var post = process.env.PORT || 3000;
 //CONFIGURE DB AND MONGOJS
 var databaseUrl = "scraper";
 var collections = ["results", "comment"];
@@ -123,7 +125,7 @@ app.post("/submit", function(req, res) {
 
 
 // LISTENER
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("App running on port 3000!");
 });
 
