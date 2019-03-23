@@ -15,13 +15,18 @@
 <body>
     <h1>WALL STREET JOURNAL APP</h1>
     <div id="articles"></div>
+  
+    
+    
 
     <script>
         $.getJSON("/scrape", function (data) {
             // SHOW THE HEADLINE, URL AND SUMMARY FOR EACH ARTICLE
             for (var i = 0; i < data.length; i++) {
                 $("#articles").append("<p>" + "Headline: " + data[i].Headline + "<br />" + "Link: " + data[i].URL +
-                    "<br />" + "Summary: " + data[i].Summary + "</p>" + "<button>" + "Add Comment" + "</button>");
+                    "<br />" + "Summary: " + data[i].Summary + "</p>" + "<form>" + "<p>" + "name" + "</p>" 
+                    + "<p>" + "<input id='name'>" + "</p>" + "<br>" + "<textarea cols='40' rows='5' id='comment'>" + "</textarea>" 
+                    + "<br>" + "<button type='submit' id='submit'>" + "Add Comment" + "</button>" + "</form>");
             }
         });
     </script>
