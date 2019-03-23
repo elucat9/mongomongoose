@@ -41,10 +41,13 @@ var path = require('path');
 
 var port = process.env.PORT || 3000;
 //CONFIGURE DB AND MONGOJS
+var databaseUrl = "scraper";
+var collections = ["results", "comment"];
+var db = mongojs(process.env.MONGODB_URI, collections);
 
 //CONFIGURE MONGOOSE
 var mongoose = require('mongoose');
-console.log(process.env)
+console.log
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
