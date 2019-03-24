@@ -101,28 +101,6 @@ app.get("/scrape", function(req, res) {
 
 })
 
-//POST COMMENT 
-// SAVE FORM SUBMISSION
-app.post("/submit", function(req, res) {
-  console.log(req.body);
-  // Insert the note into the notes collection
-  db.comment.insert(req.body, function(error, saved) {
-    // Log any errors
-    if (error) {
-      console.log(error);
-    }
-    else {
-      // Otherwise, send the note back to the browser
-      // This will fire off the success function of the ajax request
-      res.send(saved);
-    }
-  });
-});
-
- 
-
-
-
 
 
 
